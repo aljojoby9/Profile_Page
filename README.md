@@ -1,13 +1,32 @@
-# Personal Profiles 
+# IEEE Student Branch SJCET Palai - Social Media Links
 
-As a developer and a writer, I have numerous profiles. To make these profiles easy to access, I have created this web page. 
+This is the official social media hub for IEEE Student Branch SJCET Palai. Connect with us through our various social media channels and stay updated with our latest activities, events, and initiatives.
 
-Technologies Used: HTML, CSS, Google Analytics
+## Our Channels
+- **Official Website**: https://ieee.sjcetpalai.ac.in/
+- **Instagram**: https://www.instagram.com/ieeesbsjcet
+- **LinkedIn**: https://www.linkedin.com/in/ieee-sb-sjcet-palai-2a0a3a1a6
+- **Facebook**: https://www.facebook.com/ieeesbsjcet/
+- **WhatsApp Channel**: https://www.whatsapp.com/channel/0029VbAi1jqDDmFThOcpM613
 
-This site also has google tag embedded as part of google analytivs to monitor the traffic and learn about the site's engagement. 
+## Technologies Used
+- HTML5
+- CSS3 with animations
+- JavaScript
+- Google Analytics
+- Font Awesome Icons
+- Google Fonts
 
-Do give feedback if you have any!
+This site includes Google Analytics to monitor traffic and engagement, helping us understand how our community interacts with our content.
 
-Check it out: https://blesson-tomy.github.io/Profile_Page/
+## About IEEE SB SJCET
+IEEE Student Branch SJCET Palai is dedicated to advancing technology for humanity through various technical events, workshops, and community initiatives.
 
-OR https://profile.blessonktomy.me
+**Advancing Technology for Humanity**
+
+## Credits & Attribution
+This project is based on the original profile page created by [Blesson K Tomy](https://github.com/Blesson-Tomy). 
+- Original Repository: [Profile_Page](https://github.com/Blesson-Tomy/Profile_Page)
+- Modified and adapted for IEEE Student Branch SJCET Palai
+
+Thank you to the original creator for the excellent foundation and design!

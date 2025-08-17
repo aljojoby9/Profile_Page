@@ -1,0 +1,452 @@
+/* Animated Tech Background for IEEE */
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #000000;
+    overflow: hidden;
+}
+
+/* Floating Particles */
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #0dcaf0, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(13, 202, 240, 0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(13, 202, 240, 0.6), transparent),
+        radial-gradient(1px 1px at 130px 80px, #0dcaf0, transparent),
+        radial-gradient(2px 2px at 160px 30px, rgba(13, 202, 240, 0.7), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particleFloat 20s linear infinite;
+}
+
+/* Circuit Lines */
+.circuit-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(90deg, transparent 98%, rgba(13, 202, 240, 0.1) 100%),
+        linear-gradient(0deg, transparent 98%, rgba(13, 202, 240, 0.1) 100%);
+    background-size: 100px 100px;
+    animation: circuitPulse 15s ease-in-out infinite;
+}
+
+/* Glowing Orbs */
+.glowing-orbs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.glowing-orbs::before,
+.glowing-orbs::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13, 202, 240, 0.3) 0%, transparent 70%);
+    animation: orbFloat 25s ease-in-out infinite;
+}
+
+.glowing-orbs::before {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.glowing-orbs::after {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 15%;
+    animation-delay: -12s;
+}
+
+/* Tech Grid */
+.tech-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(13, 202, 240, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(13, 202, 240, 0.08) 1px, transparent 1px);
+    background-size: 150px 150px, 200px 200px;
+    animation: gridShift 30s linear infinite;
+}
+
+/* Data Streams */
+.data-streams {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.data-streams::before,
+.data-streams::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(13, 202, 240, 0.8) 50%,
+            transparent 100%);
+    animation: dataFlow 8s linear infinite;
+}
+
+.data-streams::before {
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.data-streams::after {
+    right: 30%;
+    animation-delay: -4s;
+}
+
+/* Pulse Rings */
+.pulse-rings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.pulse-rings::before,
+.pulse-rings::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(13, 202, 240, 0.3);
+    border-radius: 50%;
+    animation: pulseRing 6s ease-out infinite;
+}
+
+.pulse-rings::before {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    left: 70%;
+    animation-delay: 0s;
+}
+
+.pulse-rings::after {
+    width: 150px;
+    height: 150px;
+    bottom: 40%;
+    left: 20%;
+    animation-delay: -3s;
+}
+
+/* Video Background Layer - DISABLED */
+/*
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.35;
+    filter: hue-rotate(200deg) saturate(1.4) brightness(0.4) contrast(1.2);
+    transition: opacity 0.5s ease;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 15, 35, 0.8) 0%,
+        rgba(26, 26, 46, 0.7) 50%,
+        rgba(22, 33, 62, 0.8) 100%
+    );
+    mix-blend-mode: multiply;
+}
+*/
+
+/* Video loading state */
+.video-background video:not([src]) {
+    opacity: 0;
+}
+
+/* Fallback background when video fails to load */
+.video-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(13, 202, 240, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    z-index: -1;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .video-background video {
+        opacity: 0.15;
+        filter: hue-rotate(200deg) saturate(0.8) brightness(0.2);
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .video-background video {
+        display: none;
+    }
+}
+
+/* Tech Background Effects - DISABLED for clean black background */
+/*
+.circuit-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(90deg, transparent 98%, rgba(13, 202, 240, 0.1) 100%),
+        linear-gradient(0deg, transparent 98%, rgba(13, 202, 240, 0.1) 100%);
+    background-size: 50px 50px;
+    animation: circuitMove 20s linear infinite;
+}
+
+.grid-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(13, 202, 240, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(13, 202, 240, 0.15) 1px, transparent 1px);
+    background-size: 100px 100px, 150px 150px;
+    animation: gridPulse 8s ease-in-out infinite;
+}
+
+.pulse-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(13, 202, 240, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(8, 145, 178, 0.03) 0%, transparent 70%);
+    animation: techPulse 12s ease-in-out infinite;
+}
+*/
+
+/* Background Animations */
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.8;
+    }
+
+    33% {
+        transform: translateY(-100px) translateX(50px);
+        opacity: 1;
+    }
+
+    66% {
+        transform: translateY(-50px) translateX(-30px);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-200px) translateX(100px);
+        opacity: 0.8;
+    }
+}
+
+@keyframes circuitPulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+
+    25% {
+        opacity: 0.4;
+        transform: scale(1.02);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+
+    75% {
+        opacity: 0.3;
+        transform: scale(1.01);
+    }
+}
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translateY(-50px) translateX(30px) scale(1.1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-20px) translateX(-40px) scale(0.9);
+        opacity: 0.7;
+    }
+
+    75% {
+        transform: translateY(30px) translateX(20px) scale(1.05);
+        opacity: 0.4;
+    }
+}
+
+@keyframes gridShift {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translate(20px, -20px);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-10px, 30px);
+        opacity: 0.4;
+    }
+
+    75% {
+        transform: translate(30px, 10px);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+}
+
+@keyframes dataFlow {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(calc(100vh + 100px));
+        opacity: 0;
+    }
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Performance Optimizations */
+.animated-background * {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-particles {
+        background-size: 100px 50px;
+        animation-duration: 15s;
+    }
+
+    .circuit-lines {
+        background-size: 50px 50px;
+    }
+
+    .tech-grid {
+        background-size: 75px 75px, 100px 100px;
+    }
+
+    .glowing-orbs::before {
+        width: 150px;
+        height: 150px;
+    }
+
+    .glowing-orbs::after {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .animated-background * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .floating-particles,
+    .circuit-lines,
+    .glowing-orbs,
+    .tech-grid,
+    .data-streams,
+    .pulse-rings {
+        animation: none;
+        opacity: 0.2;
+    }
+}
